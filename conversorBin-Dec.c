@@ -1,5 +1,5 @@
 /* 
- * File:   main.c
+ * File:   conversorBin-Dec.c
  * Author: FILIPE-00
  *
  * Created on 7 de Maio de 2019, 20:47
@@ -12,7 +12,6 @@
 int conversorBinDec (char arrayBin[43]);
 
 int main(int argc, char** argv) {
-
     char arrayBin[43];
     int valorDec;
 
@@ -24,12 +23,10 @@ int main(int argc, char** argv) {
     
     valorDec = conversorBinDec(arrayBin);
     printf("O numero %s convertido para decimal eh %d", arrayBin, valorDec);
-    printf("\n");
-    
-}
+    printf("\n"); 
+}//FIM main
 
-int conversorBinDec (char arrayBin[43]){
-    
+int conversorBinDec (char arrayBin[43]){ 
     int valorConvertido = 0;
     int potenciaAux = 1;
     int numerosBits;
@@ -46,7 +43,5 @@ int conversorBinDec (char arrayBin[43]){
         potenciaAux *= 2;
         
     }//fim for
-    
     return valorConvertido;
-    
-}
+}//FIM function
