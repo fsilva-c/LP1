@@ -87,7 +87,7 @@ void cadastrarProduto(void){
 	if((v_EhVazio = fgetc(ptrArquivo)) == EOF) v_UltimoCod = 9999;
 	else{
 		while((fscanf(ptrArquivo, "%d %s %s %f %f\n", &v_UltimoCod, v_Nome, v_Grupo, &v_Pontuacao, &v_Valor)) != EOF){
-				if(strcmp(v_Nome, cadastroProduto.nome) == 0){
+			if(strcmp(v_Nome, cadastroProduto.nome) == 0){
 				printf("ERRO 0000x2: Jah existe um produto cadastrado com esse nome!\n");
 				return;
 			}
