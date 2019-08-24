@@ -138,12 +138,6 @@ void cadastrarProduto(void){
 
 }//FIM function
 
-void menu_cadastrarProduto(){
-	printf("\n=================================================\n");
-
-	printf("\n=================================================\n");
-}
-
 void lista_tipoGrupo(short opInf_GpProduto){
 	if(opInf_GpProduto == 1) fprintf(ptrArquivo, "%s", "Embalagem ");
 	else if(opInf_GpProduto == 2) fprintf(ptrArquivo, "%s", "Bebida ");
