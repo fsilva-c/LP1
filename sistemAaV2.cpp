@@ -3,8 +3,8 @@
 #include <string.h>
 
 /*
-*	pode compilar direto, sem criar o arquivo produtos.txt na pasta
-*	so pegar e rodar
+*	crie um arquivo produtos.txt antes de compilar
+*	abçs
 */
 
 FILE *ptrArquivo;
