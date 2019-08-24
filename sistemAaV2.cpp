@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 
+/*
+*	pode compilar direto, sem criar o arquivo produtos.txt na pasta
+*	so pegar e rodar
+*/
+
 FILE *ptrArquivo;
 
 typedef struct cliente{
@@ -95,7 +100,7 @@ void cadastrarProduto(void){
 	fclose(ptrArquivo);
 	v_UltimoCod++;
 
-	//agora ja pode pedir as informações
+	//agora ja pode pedir as informaÃ§Ãµes
 	//daqui p baixo
 
 	//grupo do produto
@@ -147,20 +152,20 @@ void lista_tipoGrupo(short opInf_GpProduto){
 	else if(opInf_GpProduto == 5) fprintf(ptrArquivo, "%s", "Manutencao_em_Geral ");
 	else if(opInf_GpProduto == 6) fprintf(ptrArquivo, "%s", "Medicamento ");
 	else if(opInf_GpProduto == 7) fprintf(ptrArquivo, "%s", "Material_de_Cozinha ");
-	else if(opInf_GpProduto == 8) fprintf(ptrArquivo, "%s", "Higienização_Pessoal ");
+	else if(opInf_GpProduto == 8) fprintf(ptrArquivo, "%s", "HigienizaÃ§Ã£o_Pessoal ");
 	else if(opInf_GpProduto == 9) fprintf(ptrArquivo, "%s", "Semente,_Muda_de_Plantas ");
 	else if(opInf_GpProduto == 10) fprintf(ptrArquivo, "%s", "Equipamento_de_informatica ");
 }//FIM function
 
 void menuGrupo_Produto(){
 	printf("1-> Acondicionamento e Embalagem\n");
-	printf("2-> Alimentícios: Bebida\n");
-	printf("3-> Alimentícios: Alimento\n");
-	printf("4-> Alimentícios: Alimento animal\n");
-	printf("5-> Ferramenta de Manutenção em Geral\n");
+	printf("2-> AlimentÃ­cios: Bebida\n");
+	printf("3-> AlimentÃ­cios: Alimento\n");
+	printf("4-> AlimentÃ­cios: Alimento animal\n");
+	printf("5-> Ferramenta de ManutenÃ§Ã£o em Geral\n");
 	printf("6-> Medicamento\n");
 	printf("7-> Material de Expediente: Material de Cozinha\n");
-	printf("8-> Material de Expediente: Higienização Pessoal\n");
+	printf("8-> Material de Expediente: HigienizaÃ§Ã£o Pessoal\n");
 	printf("9-> Semente, Muda de Plantas\n");
 	printf("10-> Equipamento de informatica\n");
 }
