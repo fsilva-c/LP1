@@ -19,7 +19,6 @@ typedef struct cliente{
 typedef struct produto{
 	int codigoBarras;
 	char nome[50];
-	char undMedida[3];
 	char grupo[20];
 	float pontuacao;
 	float valor;
