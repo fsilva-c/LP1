@@ -7,6 +7,9 @@
 *	depois so pegar e rodar
 */
 
+
+// Rel exibir produtos cadastrados
+
 FILE *ptrArquivo;
 
 typedef struct cliente{
@@ -19,6 +22,7 @@ typedef struct cliente{
 typedef struct produto{
 	int codigoBarras;
 	char nome[50];
+	char undMedida[3];
 	char grupo[20];
 	float pontuacao;
 	float valor;
@@ -48,15 +52,26 @@ void lista_TipoMedida(short opInf_UndMedida);
 void lista_tipoGrupo(short opInf_GpProduto);
 void menu_cadastrarProduto();
 
+void alterarValor_Produto();
 void menu_RelProdutosPorValor();
 void rel_produtoPorGrupo();
 void rel_produtosPorValor();
 void rel_produtosCadastrados();
 
 int main(){
-	cadastrarProduto();
-	rel_produtosPorValor();
-	rel_produtosCadastrados();
+	
+	//barras daqui rsrsrsrs
+	
+	//cadastrarProduto();
+	//rel_produtosPorValor();
+	//rel_produtosCadastrados();
+	
+	/*
+	* apague as barras para testar os relatorios
+	*/
+	
+	alterarValor_Produto();
+	
 	system("pause");
 	return 0;
 }
@@ -177,6 +192,36 @@ void rel_produtoPorGrupo(){
     //escreva daqui pra baixo
     
 }//FIM function 
+
+void alterarValor_Produto(){
+	FILE *ptrAuxArquivo;
+	int codInformado;
+	int v_UltimoCod;
+	char v_Nome[50] = {'\0'};
+	char v_Grupo[50] = {'\0'};
+	float v_Pontuacao;
+	float v_Valor;
+	float novoValor;
+	
+	rel_produtosCadastrados();
+	printf("Informe o codigo do produto que deseja alterar o valor: ");
+	scanf(" %d", &codInformado);
+	
+	system("cls");
+	ptrAuxArquivo = fopen("auxProdutos.txt", "a"); if(ptrAuxArquivo == NULL) exit(EXIT_FAILURE);
+	ptrArquivo = fopen("produtos.txt", "r"); if(ptrArquivo == NULL) exit(EXIT_FAILURE);
+	while((fscanf(ptrArquivo, "%d %s %s %f %f\n", &v_UltimoCod, v_Nome, v_Grupo, &v_Pontuacao, &v_Valor)) != EOF){
+		if(codInformado == v_UltimoCod){
+			printf("%d -- %s -- R$%.2f\n", v_UltimoCod, v_Nome, v_Valor);
+			printf("Informe o novo valor: ");
+			scanf(" %f", &novoValor);
+			fprintf(ptrAuxArquivo, "%d %s %s %.2f %.2f\n", v_UltimoCod, v_Nome, v_Grupo, v_Pontuacao, novoValor);
+		}else fprintf(ptrAuxArquivo, "%d %s %s %.2f %.2f\n", v_UltimoCod, v_Nome, v_Grupo, v_Pontuacao, v_Valor);
+	}//FIM while
+	fclose(ptrAuxArquivo); fclose(ptrArquivo);
+	remove("produtos.txt");
+	rename("auxProdutos.txt", "produtos.txt");
+}//FIM function
 
 void menu_RelProdutosPorValor(){
 	system("cls");	
