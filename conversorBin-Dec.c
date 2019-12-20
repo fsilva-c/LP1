@@ -33,12 +33,8 @@ int conversorBinDec (char arrayBin[43]){
     numerosBits = strlen(arrayBin);
         
     for(int i=numerosBits-1; i>=0; i--){
-       
-        if(arrayBin[i] == '1'){
-            
+        if(arrayBin[i] == '1')
             valorConvertido += potenciaAux;
-              
-        }
         
         potenciaAux *= 2;
         
