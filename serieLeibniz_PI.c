@@ -7,7 +7,7 @@
 */
 
 //definindo o intervalo de operação do laço for
-#define N 3000000
+#define N 30000000
 
 int main(){
     int sinal = -1;
@@ -23,6 +23,6 @@ int main(){
         somaPi *= sinal;
     }
 
-    printf("O valor aproximado de PI apos %d operacoes eh = %.8f\n", N, somaPi);
+    printf("O valor aproximado de PI apos %d operacoes eh = %.8f\n", N/2, somaPi);
 
 }//END main
